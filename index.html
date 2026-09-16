@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Altheimer — Elektriker in Kaufbeuren</title>
+<meta name="description" content="Elektroinstallation, Reparaturen &amp; Störungsdienst in Kaufbeuren-Neugablonz. Zuverlässig, schnell, kompetent — seit vielen Jahren für Sie im Einsatz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__spark">⚡</span>
+      <span class="nav__name">Christian Altheimer <em>Elektro</em></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#oeffnungszeiten">Öffnungszeiten</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="tel:+498341062260" class="nav__cta">
+      <span>08341 62260</span>
+    </a>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO (GSAP scroll scene, mounted via React) ============ -->
+<div id="hero-root"></div>
+
+<!-- ============ LOGO / TRUST STRIP ============ -->
+<section class="trust reveal" data-reveal="fade">
+  <div class="trust__inner">
+    <div class="trust__item">
+      <strong>35+</strong>
+      <span>Jahre Erfahrung*</span>
+    </div>
+    <div class="trust__divider"></div>
+    <div class="trust__item">
+      <strong>5,0★</strong>
+      <span>Google-Bewertung</span>
+    </div>
+    <div class="trust__divider"></div>
+    <div class="trust__item">
+      <strong>1.000+</strong>
+      <span>Aufträge erledigt*</span>
+    </div>
+    <div class="trust__divider"></div>
+    <div class="trust__item">
+      <strong>&lt; 24h</strong>
+      <span>Rückrufzeit*</span>
+    </div>
+  </div>
+  <p class="trust__note">* Platzhalterwerte — bitte später mit echten Zahlen ersetzen.</p>
+</section>
+
+<!-- ============ LEISTUNGEN ============ -->
+<section class="services" id="leistungen">
+  <div class="section-head reveal" data-reveal="up">
+    <p class="eyebrow">Leistungen</p>
+    <h2>Alles aus einer Hand.</h2>
+    <p class="section-sub">Vom Zählerschrank bis zum Smart Home — Ihr Elektriker für nahezu jedes Anliegen. (Beispielhafte Leistungen, gerne später anpassen.)</p>
+  </div>
+
+  <div class="services__grid">
+
+    <article class="service-card reveal" data-reveal="up">
+      <div class="service-card__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Störungsdienst</h3>
+      <p>Stromausfall, Kurzschluss oder defekte Sicherung — schnelle Hilfe, wenn es darauf ankommt.</p>
+    </article>
+
+    <article class="service-card reveal" data-reveal="up">
+      <div class="service-card__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V9l6-5 6 5v12M10 21v-6h4v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Neubau &amp; Altbau</h3>
+      <p>Komplette Elektroinstallation für Neubauten sowie fachgerechte Sanierung im Bestand.</p>
+    </article>
+
+    <article class="service-card reveal" data-reveal="up">
+      <div class="service-card__icon">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M9 7h6M9 11h6M9 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Zählerschrank &amp; Sicherungen</h3>
+      <p>Modernisierung und Erneuerung von Zählerschränken nach aktuellen Normen.</p>
+    </article>
+
+    <article class="service-card reveal" data-reveal="up">
+      <div class="service-card__icon">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Beleuchtungstechnik</h3>
+      <p>Von klassisch bis LED — individuelle Lichtkonzepte für Zuhause und Gewerbe.</p>
+    </article>
+
+    <article class="service-card reveal" data-reveal="up">
+      <div class="service-card__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 1 8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 20v-4M4 12H2M12 4V2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+      </div>
+      <h3>E-Check &amp; Sicherheitsprüfung</h3>
+      <p>Vorbeugende Prüfung Ihrer Elektroanlage — für Sicherheit und Versicherungsschutz.</p>
+    </article>
+
+    <article class="service-card reveal" data-reveal="up">
+      <div class="service-card__icon">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Smart Home</h3>
+      <p>Vernetzte Steuerung für Licht, Heizung und Rollläden — einfach und zuverlässig.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ÜBER UNS / PARALLAX FEATURE ============ -->
+<section class="feature" id="ueber-uns">
+  <div class="feature__parallax" id="featureParallax"></div>
+  <div class="feature__content reveal" data-reveal="up">
+    <p class="eyebrow eyebrow--light">Über uns</p>
+    <h2>Ein Name, dem<br>Kaufbeuren vertraut.</h2>
+    <p>Christian Altheimer ist seit vielen Jahren als Elektriker in Kaufbeuren-Neugablonz tätig. Persönlicher Service, ehrliche Beratung und saubere Arbeit stehen im Mittelpunkt — ob kleine Reparatur oder komplette Installation.</p>
+    <p class="feature__hint">(Platzhaltertext — später gerne durch die persönliche Geschichte ersetzen.)</p>
+  </div>
+</section>
+
+<!-- ============ ÖFFNUNGSZEITEN ============ -->
+<section class="hours" id="oeffnungszeiten">
+  <div class="section-head reveal" data-reveal="up">
+    <p class="eyebrow">Erreichbarkeit</p>
+    <h2>Öffnungszeiten.</h2>
+    <p class="section-sub">Beispielzeiten — bitte später mit den tatsächlichen Öffnungszeiten ersetzen.</p>
+  </div>
+
+  <div class="hours__panel reveal" data-reveal="up">
+    <div class="hours__status" id="hoursStatus">
+      <span class="hours__dot" id="hoursDot"></span>
+      <span id="hoursStatusText">Status wird geladen…</span>
+    </div>
+    <ul class="hours__list" id="hoursList">
+      <li data-day="1"><span>Montag</span><span>07:30 – 17:00</span></li>
+      <li data-day="2"><span>Dienstag</span><span>07:30 – 17:00</span></li>
+      <li data-day="3"><span>Mittwoch</span><span>07:30 – 17:00</span></li>
+      <li data-day="4"><span>Donnerstag</span><span>07:30 – 17:00</span></li>
+      <li data-day="5"><span>Freitag</span><span>07:30 – 15:00</span></li>
+      <li data-day="6"><span>Samstag</span><span>nach Vereinbarung</span></li>
+      <li data-day="0"><span>Sonntag</span><span>geschlossen</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BEWERTUNGEN ============ -->
+<section class="reviews" id="bewertungen">
+  <div class="section-head reveal" data-reveal="up">
+    <p class="eyebrow">Bewertungen</p>
+    <h2>Das sagen unsere Kunden.</h2>
+    <div class="section-rating">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span>5,0 von 5 · 10 Google-Rezensionen</span>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee__track marquee__track--left" id="marqueeLeft"></div>
+  </div>
+  <div class="marquee">
+    <div class="marquee__track marquee__track--right" id="marqueeRight"></div>
+  </div>
+
+  <p class="reviews__cta">
+    <a href="https://www.google.com" target="_blank" rel="noopener">Alle Bewertungen auf Google ansehen →</a>
+  </p>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="contact" id="kontakt">
+  <div class="contact__inner">
+    <div class="contact__info reveal" data-reveal="left">
+      <p class="eyebrow eyebrow--light">Kontakt</p>
+      <h2>Rufen Sie an,<br>wir kümmern uns.</h2>
+      <ul class="contact__list">
+        <li>
+          <span class="contact__label">Adresse</span>
+          <span>Bürgerstraße 5<br>87600 Kaufbeuren-Neugablonz</span>
+        </li>
+        <li>
+          <span class="contact__label">Telefon</span>
+          <a href="tel:+498341062260">08341 62260</a>
+        </li>
+        <li>
+          <span class="contact__label">E-Mail</span>
+          <a href="mailto:info@altheimer-elektro.de">info@altheimer-elektro.de*</a>
+        </li>
+      </ul>
+      <p class="feature__hint">* Platzhalter-E-Mail — bitte später anpassen.</p>
+      <div class="contact__actions">
+        <a href="tel:+498341062260" class="btn btn--primary">Jetzt anrufen</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=B%C3%BCrgerstra%C3%9Fe+5,+87600+Kaufbeuren-Neugablonz" target="_blank" rel="noopener" class="btn btn--ghost">Route planen</a>
+      </div>
+    </div>
+    <div class="contact__map reveal" data-reveal="right">
+      <iframe
+        title="Standort Christian Altheimer Elektro"
+        src="https://maps.google.com/maps?q=B%C3%BCrgerstra%C3%9Fe%205%2C%2087600%20Kaufbeuren-Neugablonz&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="nav__spark">⚡</span>
+      <span>Christian Altheimer <em>Elektro</em></span>
+    </div>
+    <nav class="footer__links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#oeffnungszeiten">Öffnungszeiten</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <p class="footer__meta">© <span id="year"></span> Christian Altheimer — Elektriker in Kaufbeuren. Alle Angaben ohne Gewähr.</p>
+  </div>
+</footer>
+
+<script type="module" src="/src/main.jsx"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
