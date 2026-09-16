@@ -6,6 +6,15 @@ import './ElectricHeroScene.css';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
+// Mobile browsers (iOS Safari, Chrome Android) resize the viewport as the
+// address bar collapses/expands *during* scroll. That fires resize events
+// mid-scroll, which makes ScrollTrigger recompute the pin distance with a
+// different window.innerHeight than the one the timeline was built with —
+// the pin spacer ends up the wrong height and everything after the hero
+// becomes unreachable/invisible. This is GSAP's documented fix.
+ScrollTrigger.config({ ignoreMobileResize: true });
+ScrollTrigger.normalizeScroll(true);
+
 // Anchor points live in the same 0–100 percentage space as the hidden
 // <svg viewBox="0 0 100 100"> paths below, so the whole scene (positions,
 // path curvature, everything) scales responsively with the stage — no
