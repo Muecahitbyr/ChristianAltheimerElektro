@@ -11,9 +11,15 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 // mid-scroll, which makes ScrollTrigger recompute the pin distance with a
 // different window.innerHeight than the one the timeline was built with —
 // the pin spacer ends up the wrong height and everything after the hero
-// becomes unreachable/invisible. This is GSAP's documented fix.
+// becomes unreachable/invisible. This is GSAP's documented fix, scoped to
+// touch devices only — normalizeScroll changes how scroll is dispatched,
+// which makes desktop wheel/trackpad scrolling feel off if left on there
+// too, and desktop doesn't have the resizing address-bar problem anyway.
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 ScrollTrigger.config({ ignoreMobileResize: true });
-ScrollTrigger.normalizeScroll(true);
+if (isTouchDevice) {
+  ScrollTrigger.normalizeScroll(true);
+}
 
 // Anchor points live in the same 0–100 percentage space as the hidden
 // <svg viewBox="0 0 100 100"> paths below, so the whole scene (positions,
