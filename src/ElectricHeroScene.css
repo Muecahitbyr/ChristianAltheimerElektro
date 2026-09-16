@@ -102,10 +102,13 @@
 /* ---------------- glow halos (screen-blended light) ---------------- */
 
 .hs-glow {
+  /* plain alpha-blended radial gradient rather than mix-blend-mode:screen —
+     the blend mode forces the compositor to recompute this against every
+     layer beneath it each frame, which was a real cost across the whole
+     pinned hero since these glows exist (even at low opacity) throughout. */
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  mix-blend-mode: screen;
   filter: blur(6px);
 }
 
@@ -125,8 +128,7 @@
 .hs-glow--bulb {
   width: clamp(260px, 32vw, 520px);
   height: clamp(260px, 32vw, 520px);
-  background: radial-gradient(circle, rgba(255, 244, 214, 0.95), rgba(255, 210, 130, 0.28) 42%, transparent 72%);
-  filter: blur(10px);
+  background: radial-gradient(circle, rgba(255, 244, 214, 0.95), rgba(255, 210, 130, 0.22) 42%, transparent 70%);
 }
 
 /* ---------------- responsive ---------------- */

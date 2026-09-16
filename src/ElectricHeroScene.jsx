@@ -75,8 +75,6 @@ export default function ElectricHeroScene() {
         const switchGlow = switchGlowRef.current;
         const bulb = bulbRef.current;
         const bulbGlow = bulbGlowRef.current;
-        const blobA = blobARef.current;
-        const blobB = blobBRef.current;
         const flash = flashRef.current;
         const heroItems = heroTextRef.current.querySelectorAll('.reveal-item');
 
@@ -238,15 +236,15 @@ export default function ElectricHeroScene() {
           .to(flash, { opacity: 0.07, duration: 0.35, ease: 'power2.out' }, 'bulbOn')
           .to(flash, { opacity: 0, duration: 0.55, ease: 'power2.inOut' }, 'bulbOn+=0.35');
 
-        /* 7) the scene settles into a soft backdrop and the hero text arrives */
+        /* 7) the scene settles into a soft backdrop and the hero text arrives
+           (scale + opacity only, no filter: blurring the full-viewport scene
+           wrapper here was the single most expensive thing in this timeline —
+           it forced a full offscreen re-render of the whole scene every frame
+           for the rest of the scroll, which is what was making the pinned
+           hero feel janky) */
         tl.addLabel('reveal', 'bulbOn+=0.8')
-          .to(sceneGroupRef.current, { scale: 0.92, opacity: 0.55, filter: 'blur(2px)', duration: 1.2, ease: 'power2.inOut' }, 'reveal')
+          .to(sceneGroupRef.current, { scale: 0.92, opacity: 0.55, duration: 1.2, ease: 'power2.inOut' }, 'reveal')
           .to(heroItems, { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: 'power3.out' }, 'reveal+=0.3');
-
-        /* ambient depth parallax across the whole sequence */
-        const total = tl.duration();
-        tl.to(blobA, { x: '+=40', y: '-=25', duration: total, ease: 'none' }, 0);
-        tl.to(blobB, { x: '-=35', y: '+=20', duration: total, ease: 'none' }, 0);
 
         return () => {};
       }
